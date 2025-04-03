@@ -4,6 +4,8 @@ than I originally thought. There was quite some difficulty in managing the state
 considered such as users repeatedly pressing 0 to create something like 0000 as an entry. However, this project was a great way to sum up everything that
 I have learnt and done in the Odin Project. 
 
+[Live Site](https://anton-ngan.github.io/calculator/)
+
 ## Credits
 
 * Favicon from https://www.svgrepo.com/
