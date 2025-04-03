@@ -17,8 +17,9 @@ const decimal = document.querySelector(".decimal");
 const operationDictionary = {
     "+": add,
     "-": subtract,
-    "*": multiply,
+    "×": multiply,
     "÷": divide,
+    "%": modulo,
 }
 
 function add(x, y) {
@@ -36,6 +37,10 @@ function multiply(x, y) {
 function divide(x, y) {
     if (y==0) return NaN;
     return x / y;
+}
+
+function modulo(x, y) {
+    return x % y;
 }
 
 function operate(x, y, operator) {
