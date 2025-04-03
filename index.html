@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link href="./styles.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
-    <div></div>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <div class="accumulation"></div> <!--non-breaking height-->
+                <div class="current-entry"></div>
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <div class="clear button"><button>CE</button></div>
+                    <div class="del button"><button>Del</button></div>
+                    <div class="button"><button>+/-</button></div>
+                    <div class="binary-op button"><button>÷</button></div>
+                </div>
+                <div class="row">
+                    <div class="num button"><button>7</button></div>
+                    <div class="num button"><button>8</button></div>
+                    <div class="num button"><button>9</button></div>
+                    <div class="binary-op button"><button>*</button></div>
+                </div>
+                <div class="row">
+                    <div class="num button"><button>4</button></div>
+                    <div class="num button"><button>5</button></div>
+                    <div class="num button"><button>6</button></div>
+                    <div class="binary-op button"><button>-</button></div>
+                </div>
+                <div class="row">
+                    <div class="num button"><button>1</button></div>
+                    <div class="num button"><button>2</button></div>
+                    <div class="num button"><button>3</button></div>
+                    <div class="binary-op button"><button>+</button></div>
+                </div>
+                <div class="row">
+                    <div class="num button"><button>0</button></div>
+                    <div class="button"><button>.</button></div>
+                    <div class="button"><button>=</button></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
