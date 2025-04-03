@@ -7,6 +7,7 @@ html, body {
     height: 100vh;
     margin: 0;
     background-color: antiquewhite;
+    user-select: none;
 }
 
 a {
@@ -58,7 +59,7 @@ a:hover{
 }
 
 .display {
-    background-color: rgba(60, 95, 8, 0.568);
+    background-color: rgba(71, 107, 16, 0.685);
     color: whitesmoke;
     font-family: "Time";
     padding: 15px;
@@ -66,7 +67,6 @@ a:hover{
     font-size: 50px;
     border-radius: 10px;
     border: 3px inset #1E1F24;
-    user-select: none;
 }
 
 .accumulation {

@@ -56,15 +56,14 @@ function resetToNull() {
 // Build the number
 nums.forEach((num) => {
     num.addEventListener("click", (e) => {
-        if (firstOperand !== null && !operator) {
+        if (firstOperand !== null && !operator) {             // Clear the accumulated result and start with a new number
             firstOperand = null;
             accDisplay.textContent = "";
         }
-
         if ((numDisplay.charAt(0) === "-" && numDisplay.length <= 17 || numDisplay.length < 17) && 
             !(numDisplay === "0" && num.textContent === "0")) {
 
-            if (numDisplay === "0") {
+            if (numDisplay === "0") {                         // Replace 0 with any number
                 numDisplay = num.textContent;
             } else {
                 numDisplay += num.textContent;
@@ -77,15 +76,15 @@ nums.forEach((num) => {
 // Perform the operation
 binaryOps.forEach((binaryOp) => {
     binaryOp.addEventListener("click", (e) => {
-        if (firstOperand === null && !operator) {
+        if (firstOperand === null && !operator) {              // Save the first operand
             firstOperand = +numDisplay;
             numDisplay = "";
             operator = binaryOp.textContent;
             accDisplay.textContent = `${firstOperand} ${operator}`;
-        } else if (firstOperand !== null && !numDisplay) {
+        } else if (firstOperand !== null && !numDisplay) {     // Change the binary operation
             operator = binaryOp.textContent;
             accDisplay.textContent = `${firstOperand} ${operator}`;
-        } else {
+        } else {                                               // Perform the binary operation using the second operand
             secondOperand = +numDisplay;
             numDisplay = "";
             firstOperand = operate(firstOperand, secondOperand, operator);
@@ -102,12 +101,11 @@ clearAll.addEventListener("click", (e) => {
 })
 
 del.addEventListener("click", (e)=> {
-    if (firstOperand && !operator && !secondOperand) {
+    if (firstOperand && !operator && !secondOperand) {       // Delete digits from the result going right to left
         let temp = firstOperand.toString().substring(0, firstOperand.toString().length - 1)
         firstOperand = +temp;
-        inputDisplay.textContent = firstOperand;
-        accDisplay.textContent = firstOperand;
-    } else if (numDisplay !== "") {
+        accDisplay.textContent = inputDisplay.textContent = firstOperand;
+    } else if (numDisplay !== "") {                          // Delete digits from the next operand going right to left         
         numDisplay = numDisplay.substring(0, numDisplay.length - 1);
         inputDisplay.textContent = numDisplay;
     }
@@ -118,21 +116,19 @@ equal.addEventListener("click", (e) => {
         secondOperand = +numDisplay;
         let res = operate(firstOperand, secondOperand, operator);
         accDisplay.textContent = `${firstOperand} ${operator} ${secondOperand} =`;
-        inputDisplay.textContent = res;
-        firstOperand = res;
+        firstOperand = inputDisplay.textContent = res;
         operator = secondOperand = null;
         numDisplay = "";
     }
 })
 
 sign.addEventListener("click", (e) => {
-    if (firstOperand && !operator && !secondOperand) {
+    if (firstOperand && !operator && !secondOperand) {     // Change the sign of the result
         firstOperand *= -1;
-        inputDisplay.textContent = firstOperand;
-        accDisplay.textContent = firstOperand;
+        accDisplay.textContent = inputDisplay.textContent = firstOperand;
     }
 
-    if (numDisplay.length > 0 && numDisplay != 0) {
+    if (numDisplay.length > 0 && numDisplay != 0) {        // Change the sign of the next operand
         if (numDisplay.charAt(0) == "-") {
             numDisplay = numDisplay.substring(1);
         } else {
@@ -141,7 +137,6 @@ sign.addEventListener("click", (e) => {
         inputDisplay.textContent = numDisplay;
     }
 })
-
 
 decimal.addEventListener("click", (e) => {
     if (numDisplay.includes(".")) {
